@@ -15,8 +15,12 @@ categories = [
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-portable-atomic = { version = "1.5.1", default-features = false, features = ["require-cas"] }
+portable-atomic = { version = "1.10.0", default-features = false, features = ["require-cas"] }
 defmt = { version = "0.3.0", optional = true }
+
+[features]
+defmt_0_3 = ["dep:defmt"]
+critical-section = ["portable-atomic/critical-section"]
 
 [package.metadata.docs.rs]
 all-features = true
